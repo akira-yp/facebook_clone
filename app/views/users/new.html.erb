@@ -1,0 +1,16 @@
+<h1>アカウント登録</h1>
+<% if @user.errors.any? %>
+<div id="errors_explanation">
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= form_with(model: @user, local: true) do |f| %>
+<%= f.text_field :name, placeholder:"name" %>
+<%= f.text_field :email, placeholder:"e-mail" %>
+<%= f.text_field :password, placeholder:"password" %>
+<%= f.submit 'アカウント登録' %>
+<% end %>
