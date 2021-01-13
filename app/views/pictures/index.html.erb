@@ -1,0 +1,22 @@
+<div class="">
+  <%= form_with(model: @picture, local: true) do |f| %>
+  <%= f.text_field :content, placeholder:"その気持ちをシェアしよう"%>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+  <% end %>
+</div>
+<div class="">
+  <% @pictures.each do |picture| %>
+  <div class="">
+    <div class="">
+    <%= @picture.content %>
+    </div>
+    <div class="">
+    <%= @picture.image %>
+    </div>
+    <div class="">
+    <span><%= @picture.created_at %></span>
+    </div>
+  </div>
+  <% end %>
+</div>

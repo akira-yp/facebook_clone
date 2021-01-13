@@ -1,0 +1,8 @@
+<div>
+  <%= @picture.content %>
+</div>
+<div>
+  <%= @picture.image %>
+</div>
+<%= link_to '編集', edit_picture_path(@picture.id) %>
+<%= link_to '削除', picture_path, method: :delete %>
