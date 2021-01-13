@@ -2,7 +2,7 @@
   <%= @picture.content %>
 </div>
 <div>
-  <%= @picture.image %>
+  <%= image_tag @picture.image.url %>
 </div>
 <%= link_to '編集', edit_picture_path(@picture.id) %>
 <%= link_to '削除', picture_path, method: :delete %>
