@@ -7,16 +7,16 @@
 </div>
 <div class="">
   <% @pictures.each do |picture| %>
-  <div class="">
     <div class="">
-    <%= @picture.content %>
+      <div class="">
+      <%= picture.content %>
+      </div>
+      <div class="">
+      <%= image_tag picture.image.url %>
+      </div>
+      <div class="">
+      <span><%= picture.created_at %></span>
+      </div>
     </div>
-    <div class="">
-    <%= @picture.image %>
-    </div>
-    <div class="">
-    <span><%= @picture.created_at %></span>
-    </div>
-  </div>
   <% end %>
 </div>

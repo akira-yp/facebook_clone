@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
     if @picture.save
-      redirect_to pictures_path
+      redirect_to pictures_path, notice:"新規投稿しました"
     else
       render :index
     end
@@ -32,6 +32,6 @@ class PicturesController < ApplicationController
   end
   private
   def picture_params
-    params.require(:pictures).permit(:image, :image_cache,:content)
+    params.require(:picture).permit(:image, :image_cache, :content)
   end
 end
