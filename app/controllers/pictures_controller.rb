@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to pictures_path, notice:"新規投稿しました"
     else
+      @pictures = Picture.all
       render :index
     end
   end
