@@ -1,5 +1,4 @@
 <div>
-  <%= notice %>
   <% if @picture.errors.any?  %>
   <ul>
     <% @picture.errors.full_messages.each do |message| %>
@@ -25,7 +24,9 @@
       <%= picture.content %>
       </div>
       <div>
-      <%= image_tag picture.image.url %>
+      <% unless picture.image.url == nil %>
+        <%= image_tag picture.image.url %>
+      <% end %>
       </div>
       <div>
       <%= picture.created_at %>

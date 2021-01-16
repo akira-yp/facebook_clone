@@ -2,3 +2,9 @@
 <p>
   Email: <%= @user.email  %>
 </p>
+<p>
+<% unless @user.user_image.url == nil %>
+  <%= image_tag @user.user_image.url %>
+<% end %>
+</p>
+<%= link_to 'ユーザー情報を変更する', edit_user_path(@user.id) %>
