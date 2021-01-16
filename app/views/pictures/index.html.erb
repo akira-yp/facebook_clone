@@ -1,12 +1,19 @@
 <div>
+  <%= notice %>
+  <% if @picture.errors.any?  %>
+  <ul>
+    <% @picture.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+<div>
   <%= form_with(model: @picture, local: true) do |f| %>
   <%= f.text_field :content, placeholder:"その気持ちをシェアしよう"%>
   <%= f.file_field :image %>
   <%= f.submit %>
   <% end %>
-</div>
-<div>
-  <%= flash[:notice] %>
 </div>
 <div>
   <% @pictures.each do |picture| %>

@@ -3,8 +3,11 @@ class PicturesController < ApplicationController
     @pictures = Picture.all
     @picture = Picture.new
   end
+
   def create
-    @picture = Picture.new(picture_params)
+    # @picture = Picture.new(picture_params)
+    # @picture.user_id = current_user.id
+    @picture = current_user.pictures.new(picture_params)
     if @picture.save
       redirect_to pictures_path, notice:"新規投稿しました"
     else
@@ -12,6 +15,7 @@ class PicturesController < ApplicationController
       render :index
     end
   end
+
   def show
     @picture = Picture.find(params[:id])
   end
