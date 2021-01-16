@@ -1,21 +1,29 @@
-<div class="">
+<div>
   <%= form_with(model: @picture, local: true) do |f| %>
   <%= f.text_field :content, placeholder:"その気持ちをシェアしよう"%>
   <%= f.file_field :image %>
   <%= f.submit %>
   <% end %>
 </div>
-<div class="">
+<div>
+  <%= flash[:notice] %>
+</div>
+<div>
   <% @pictures.each do |picture| %>
-    <div class="">
-      <div class="">
+    <div>
+      <div>
+      <%= picture.user.name %>
+      </div>
+      <div>
       <%= picture.content %>
       </div>
-      <div class="">
+      <div>
       <%= image_tag picture.image.url %>
       </div>
-      <div class="">
-      <span><%= picture.created_at %></span>
+      <div>
+      <%= picture.created_at %>
+      <%= link_to "詳細", picture_path(picture.id) %>
+      <%= link_to "削除", picture_path(picture.id), method: :delete %>
       </div>
     </div>
   <% end %>
