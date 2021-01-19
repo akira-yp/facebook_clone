@@ -1,0 +1,5 @@
+<%= form_with(model: @picture, url: confirm_pictures_path ,local: true) do |f| %>
+<%= f.text_field :content, placeholder:"その気持ちをシェアしよう"%>
+<%= f.file_field :image %>
+<%= f.submit %>
+<% end %>

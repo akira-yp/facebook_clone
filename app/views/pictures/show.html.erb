@@ -1,8 +1,13 @@
 <div>
+  <%= @picture.user.name %>
+</div>
+<div>
   <%= @picture.content %>
 </div>
 <div>
   <%= image_tag @picture.image.url %>
 </div>
+<% if @picture.user_id == current_user.id %>
 <%= link_to '編集', edit_picture_path(@picture.id) %>
 <%= link_to '削除', picture_path, method: :delete %>
+<% end %>

@@ -8,11 +8,7 @@
   <% end %>
 </div>
 <div>
-  <%= form_with(model: @picture, local: true) do |f| %>
-  <%= f.text_field :content, placeholder:"その気持ちをシェアしよう"%>
-  <%= f.file_field :image %>
-  <%= f.submit %>
-  <% end %>
+  <%= render 'form' %>
 </div>
 <div>
   <% @pictures.each do |picture| %>
@@ -31,7 +27,6 @@
       <div>
       <%= picture.created_at %>
       <%= link_to "詳細", picture_path(picture.id) %>
-      <%= link_to "削除", picture_path(picture.id), method: :delete %>
       </div>
     </div>
   <% end %>
