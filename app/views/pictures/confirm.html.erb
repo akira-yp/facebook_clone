@@ -1,16 +1,37 @@
-<%= form_with(model: @picture ,local: true) do |f| %>
-<%= f.hidden_field :content %>
-<%= f.hidden_field :image_cache %>
-<div class="">
-  <%= @picture.content %>
+<h2>こちらで投稿しますか？</h2>
+<div  class="content-card">
+  <%= form_with(model: @picture ,local: true) do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_cache %>
+  <div class="card-content">
+    <%= @picture.content %>
+  </div>
+  <% unless @picture.image.url == nil %>
+  <div class="picture-space">
+    <%= image_tag @picture.image.url %>
+  </div>
+  <% end %>
+  <div class="card-bottom">
+    <%= f.submit "投稿する", class:'btn btn-primary btn-sm' %>
+    <%= f.submit "戻る", name:'back', class:'btn btn-secondary btn-sm' %>
+  </div>
+  <% end %>
 </div>
-<% unless @picture.image.url == nil %>
-<div class="">
-  <%= image_tag @picture.image.url %>
-</div>
-<div class="">
-<% end %>
-  <%= f.submit "投稿する" %>
-  <%= f.submit "戻る", name:'back' %>
-</div>
-<% end %>
+
+
+<!-- # <%= form_with(model: @picture ,local: true) do |f| %>
+# <%= f.hidden_field :content %>
+# <%= f.hidden_field :image_cache %>
+# <div class="">
+#   <%= @picture.content %>
+# </div>
+# <% unless @picture.image.url == nil %>
+# <div class="">
+#   <%= image_tag @picture.image.url %>
+# </div>
+# <div class="">
+# <% end %>
+#   <%= f.submit "投稿する" %>
+#   <%= f.submit "戻る", name:'back' %>
+# </div>
+# <% end %> -->

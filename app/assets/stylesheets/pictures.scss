@@ -1,3 +1,188 @@
-// Place all the styles related to the pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.content-card {
+  border: none;
+  box-shadow : 0 0 4px gray;
+  border-radius: 8px;
+  max-width : 500px;
+  margin: 20px auto;
+  padding:0;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.content-card-top {
+  height:50px;
+  display:block;
+  position: relative;
+  font-style: bold;
+}
+
+.card-top {
+  height:50px;
+  display:block;
+  position: relative;
+  padding: 10px;
+  margin:0;
+  font-style:bold;
+}
+
+.card-content{
+  padding: 10px 10px 20px 20px;
+  margin:0;
+}
+
+.card-bottom{
+  display:block;
+  position: relative;
+  padding: 0 10px 5px 0;
+  // margin:0;
+  text-align: right;
+}
+
+.card-bottom span{
+  color:grey;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.user-name {
+  position: absolute;
+  padding:10px;
+}
+//
+// .user-name span{
+//   display: block;
+//   line-height: 50px;
+// }
+
+.picture-form {
+  padding: 10px;
+}
+
+
+.form-wrap {
+  padding:15px 15px 0 15px;
+  margin:0;
+}
+
+.picture-space {
+  padding:0;
+  margin:0;
+  width:100%;
+}
+
+.picture-space img{
+  max-width:500px;
+}
+
+// .form-top {
+//   width: 100%;
+//   height: 40px;
+//   padding: 0;
+//   margin: 0;
+// }
+
+.avatar {
+  width: 40px;
+  border:none;
+  border-radius: 21px;
+  background-color: #E4E6E9;
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.content-form{
+  font-size: 1rem;
+  width: 95%;
+  height: 40px;
+  padding:5px 10px;
+  margin: 0;
+  border: none;
+  border-radius: 21px;
+  background-color: #E4E6E9;
+  resize: none;
+}
+
+.form-bottom {
+  text-align: right;
+  margin:10px;
+  position: relative;
+  // height:30px;
+}
+
+.form-bottom label {
+  margin-left: 10px;
+}
+
+.file-btn:hover {
+  opacity: 0.5;
+}
+
+.submit-btn:hover {
+  opacity: 0.5;
+}
+
+.choose-picture {
+  display:none;
+}
+
+.submit-btn span {
+  color:#ffffff;
+  font-size: 0.75rem;
+  background-color: #2F72FF;
+  display:inline-block;
+  width:60px;
+  height:30px;
+  border-radius:16px;
+
+}
+.submit-btn input{
+  display: none;
+}
+
+.file-pop {
+  display: none;
+  background: #8bb7f4;
+  color: #ffffff;
+  width:70px;
+  position: absolute;
+  top: 0px;
+  left: 430px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.file-btn:hover + .file-pop {
+  display: block;
+}
+
+.submit-pop {
+  display: none;
+  background: #8bb7f4;
+  color: #ffffff;
+  width:70px;
+  position: absolute;
+  top: 0px;
+  left: 460px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.submit-btn:hover + .submit-pop {
+  display: block;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+// .content-form input {
+//   height: 40px;
+//   width: 100%;
+//   border: none;
+//   border-radius: 21px;
+//   margin:0;
+//   background-color: #E4E6E9;
+//   padding:0;
+// }

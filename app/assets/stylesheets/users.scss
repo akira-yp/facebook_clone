@@ -1,3 +1,78 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-edit-wrap{
+  margin:30px auto;
+  width:500px;
+  padding: 10px;
+  border:none;
+  background-color: #ffffff;
+  border-radius: 21px;
+  box-shadow : 0 0 4px gray;
+}
+
+table {
+  border: none;
+  padding:50px;
+  width:100%;
+}
+
+tr {
+  border:none;
+  padding:0;
+  width:100%;
+}
+
+td {
+  border: none;
+  padding:0 0 5px 0;
+  text-align: left;
+  width:100%;
+}
+
+.user-edit-image{
+  text-align:center;
+}
+
+.user-edit-image img{
+  width:200px;
+}
+
+.user-edit-submit{
+  text-align: center;
+}
+
+.form-name{
+  width:380px;
+  height:30px;
+  background-color:#E4E6E9;
+  border: none;
+  border-radius: 15px;
+  padding-left: 20px;
+}
+
+.form-email{
+  width:380px;
+  height:30px;
+  border: none;
+  background-color:#E4E6E9;
+  border-radius: 15px;
+  padding-left: 20px;
+}
+
+.form-password{
+  width:380px;
+  height:30px;
+  border: none;
+  background-color:#E4E6E9;
+  border-radius: 15px;
+  padding-left: 20px;
+}
+
+.form-user-image{
+  width:300px;
+  height:20px;
+  border: none;
+  background-color:#E4E6E9;
+}
+
+.align-center{
+  text-align: center;
+}

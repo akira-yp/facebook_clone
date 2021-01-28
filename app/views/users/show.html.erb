@@ -1,10 +1,53 @@
-<h1><%= @user.name %>のページ</h1>
-<p>
-  Email: <%= @user.email  %>
-</p>
-<p>
-<% unless @user.user_image.url == nil %>
-  <%= image_tag @user.user_image.url %>
-<% end %>
-</p>
-<%= link_to 'ユーザー情報を変更する', edit_user_path(@user.id) %>
+<h1><%= @user.name %>さんのページ</h1>
+<div class="user-edit-wrap">
+  <table class="">
+    <tr>
+      <td>Email: <%= @user.email  %></td>
+    </tr>
+    <tr>
+      <td class="user-edit-image">
+      <% unless @user.user_image.url == nil %>
+        <%= image_tag @user.user_image.url %>
+      <% end %>
+      </td>
+    </tr>
+    <tr>
+      <% if @user.id == current_user.id %>
+      <td class="align-center">
+        <%= link_to 'ユーザー情報を編集', edit_user_path(@user.id), class:'btn btn-primary btn-sm' %>
+        <%= link_to '新しく投稿する',pictures_path, class:'btn btn-primary btn-sm' %>
+      </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
+<div>
+  <% @user.pictures.each do |picture| %>
+    <div  class="content-card">
+      <div class="card-top">
+      <% if picture.user.user_image.url == nil %>
+      <image src="https://placehold.jp/50x50.png" class="avatar">
+      <% else %>
+      <%= image_tag picture.user.user_image.url ,class:"avatar"%>
+      <% end %>
+      <span class="user-name"><%= picture.user.name %></span>
+      </div>
+      <div class="card-content">
+      <%= picture.content %>
+      </div>
+      <div class="picture-space">
+      <% unless picture.image.url == nil %>
+        <%= image_tag picture.image.url %>
+      <% end %>
+      </div>
+      <div class="card-bottom">
+        <span>
+        <%= picture.created_at.strftime('%Y/%m/%d %H:%M')  %>
+        </span>
+        <span>
+        <%= link_to "詳細", picture_path(picture.id) %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+</div>

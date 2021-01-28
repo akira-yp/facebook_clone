@@ -1,6 +1,16 @@
-<h1>ログイン</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <%= f.text_field :email, placeholder:"e-mail" %>
-  <%= f.text_field :password, placeholder:"password" %>
-  <%= f.submit 'Login' %>
-<% end %>
+<div class="session-form-wrap">
+  <div class="flex-table">
+    <h2>ログイン</h2>
+    <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="input-group mb-3">
+      <%= f.text_field :email, placeholder:"e-mail" %>
+    </div>
+    <div class="input-group mb-3">
+      <%= f.text_field :password, placeholder:"password" %>
+    </div>
+    <div>
+      <%= f.submit 'Login' , class:"btn btn-primary btn-sm" %>
+    </div>
+    <% end %>
+  </div>
+</div>

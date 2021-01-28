@@ -1,16 +1,28 @@
-<h1>アカウント登録</h1>
-<% if @user.errors.any? %>
-<div id="errors_explanation">
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+<div class="session-form-wrap">
+  <div class="flex-table">
+    <h2>アカウント登録</h2>
+    <% if @user.errors.any? %>
+      <div id="errors_explanation">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
-  </ul>
+    <%= form_with(model: @user, local: true) do |f| %>
+    <div class="input-group mb-3">
+      <%= f.text_field :name, placeholder:"name" %>
+    </div>
+    <div class="input-group mb-3">
+      <%= f.text_field :email, placeholder:"e-mail" %>
+    </div>
+    <div class="input-group mb-3">
+      <%= f.text_field :password, placeholder:"password" %>
+    </div>
+    <div>
+      <%= f.submit 'アカウント登録' ,class:"btn btn-primary btn-sm" %>
+    </div>
+    <% end %>
+  </div>
 </div>
-<% end %>
-<%= form_with(model: @user, local: true) do |f| %>
-<%= f.text_field :name, placeholder:"name" %>
-<%= f.text_field :email, placeholder:"e-mail" %>
-<%= f.text_field :password, placeholder:"password" %>
-<%= f.submit 'アカウント登録' %>
-<% end %>

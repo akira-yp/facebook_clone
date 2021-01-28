@@ -1,13 +1,24 @@
-<div>
-  <%= @picture.user.name %>
-</div>
-<div>
-  <%= @picture.content %>
-</div>
-<div>
-  <%= image_tag @picture.image.url %>
-</div>
-<% if @picture.user_id == current_user.id %>
-<%= link_to '編集', edit_picture_path(@picture.id) %>
-<%= link_to '削除', picture_path, method: :delete %>
+<div  class="content-card">
+  <div class="card-top">
+    <% if @picture.user.user_image.url == nil %>
+    <image src="https://placehold.jp/50x50.png" class="avatar">
+    <% else %>
+    <%= image_tag @picture.user.user_image.url ,class:"avatar"%>
+    <% end %>
+    <span class="user-name"><%= @picture.user.name %></span>
+  </div>
+  <div class="card-content">
+    <%= @picture.content %>
+  </div>
+  <div class="picture-space">
+    <% unless @picture.image.url == nil %>
+      <%= image_tag @picture.image.url %>
+    <% end %>
+  </div>
+  <div class="card-bottom">
+    <% if @picture.user_id == current_user.id %>
+    <%= link_to '編集', edit_picture_path(@picture.id), class:"btn btn-primary btn-sm" %>
+    <%= link_to '削除', picture_path(@picture.id), {class:"btn btn-danger btn-sm", method: :delete} %>
+  </div>
 <% end %>
+</div>

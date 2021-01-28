@@ -1,3 +1,20 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.session-form-wrap {
+  display: flex;
+  justify-content: center;
+  margin:30px auto;
+  width:500px;
+  padding: 30px 10px;
+  border:none;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow : 0 0 4px gray;
+}
+
+.flex-table{
+  flex: 0 0 auto;
+  width:300px;
+}
+
+.flex-table input{
+  width: 300px;
+}

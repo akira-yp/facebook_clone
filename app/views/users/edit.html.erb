@@ -1,4 +1,4 @@
-<h1>ユーザー情報を変更</h1>
+<h1>ユーザー情報の編集</h1>
 <% if @user.errors.any? %>
 <div id="errors_explanation">
   <ul>
@@ -9,16 +9,44 @@
 </div>
 <% end %>
 <%= form_with(model: @user, local: true) do |f| %>
-<%= f.label :name, '名前を変更' %>
-<%= f.text_field :name, placeholder:"name" %>
-<%= f.label :email,'メールアドレスを変更'%>
-<%= f.text_field :email, placeholder:"e-mail" %>
-<%= f.label :password,'パスワードを変更' %>
-<%= f.text_field :password, placeholder:"password" %>
-<%= f.label :user_image, 'ユーザー画像を設定' %>
-<%= f.file_field :user_image %>
-  <% unless @user.user_image.url == nil %>
-    <%= image_tag @user.user_image.url %>
-  <% end %>
-<%= f.submit '登録情報を変更する' %>
+<div class="user-edit-wrap">
+  <table>
+    <tr>
+      <td><%= f.label :name, '名前' %></td>
+    </tr>
+    <tr>
+      <td><%= f.text_field :name, placeholder:"name", class:"form-name" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email,'メールアドレス' %></td>
+    </tr>
+    <tr>
+      <td><%= f.text_field :email, placeholder:"e-mail", class:"form-email"  %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password,'パスワードを変更' %></td>
+    </tr>
+    <tr>
+      <td><%= f.text_field :password, placeholder:"password", type:"password", class:"form-password" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :user_image, 'ユーザー画像を設定' %></td>
+    </tr>
+    <tr>
+      <td><%= f.file_field :user_image , class:"form-user-image" %></td>
+    </tr>
+    <tr>
+      <td class="user-edit-image">
+        <% unless @user.user_image.url == nil %>
+          <%= image_tag @user.user_image.url %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="user-edit-submit">
+        <%= f.submit '登録情報を変更する',class:"btn btn-primary btn-sm" %>
+      </td>
+    </tr>
+  </table>
+</div>
 <% end %>
