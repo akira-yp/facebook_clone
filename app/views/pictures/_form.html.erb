@@ -1,5 +1,12 @@
 <div class="content-card">
   <%= form_with(model: @picture, url: choose_new_or_edit ,local: true, class:"form-wrap") do |f| %>
+   <% if @picture.errors.any? %>
+  <div class="errors_explain alert alert-danger">
+      <% @picture.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+      <% end %>
+  </div>
+  <% end %>
   <div class="content-card-top">
     <% if current_user.user_image.url == nil %>
     <img src="https://placehold.jp/50x50.png" class="avatar">
@@ -8,7 +15,7 @@
     <% end %>
     <span class="user-name"><%= current_user.name %></span>
   </div>
-  <div class="">
+  <div>
     <%= f.text_area :content, placeholder:"#{current_user.name}さん、その気持ちをシェアしよう" ,class:"content-form",wrap:"soft" %>
   </div>
   <div  class="form-bottom">

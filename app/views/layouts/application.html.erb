@@ -51,8 +51,8 @@
     </header>
     <div class="main-content">
       <%= flash_message(flash[:success], :success) if flash[:success] %>
-      <%= flash_message(flash[:error], :danger) if flash[:error] %>
-      <%= flash_message(flash[:alert], :worning) if flash[:alert] %>
+      <%= flash_message(flash[:danger], :danger) if flash[:danger] %>
+      <%= flash_message(flash[:error], :worning) if flash[:error] %>
       <%= flash_message(flash[:notice], :info) if flash[:notice] %>
     <%= yield %>
     </div>
